@@ -29,7 +29,7 @@ public class BookController {
     @PostMapping("/books/search")
     public List<Book> search(@RequestBody Map<String, String> body){
         String searchTerm = body.get("text");
-        return bookDao.findByTitleContaining(searchTerm);
+        return bookDao.findByTitleContainingOrDescriptionContaining(searchTerm, searchTerm);
     }
 
     @PostMapping("/books")

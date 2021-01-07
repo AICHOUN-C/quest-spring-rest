@@ -10,5 +10,5 @@ import com.questspringrest.entity.Book;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long>{
 
-	List<Book> findByTitleContaining(String searchTerm);
+	List<Book> findByTitleContainingOrDescriptionContaining(String searchTerm, String searchTerm2);
 }
